@@ -59,7 +59,6 @@ fn producer(idx: usize, tx: mpsc::Sender<Msg>) -> Result<()> {
             return Ok(());
         }
     }
-    // Ok(())
 }
 
 impl Msg {
