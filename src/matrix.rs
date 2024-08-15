@@ -48,7 +48,7 @@ where
     }
 
     // tx 负责返回给主线程，rx 接收数据处理
-    let senders = (0..NUM_THREADS)
+    let senders: Vec<mpsc::Sender<Msg<T>>> = (0..NUM_THREADS)
         .map(|_| {
             let (tx, rx) = mpsc::channel::<Msg<T>>();
             thread::spawn(move || {

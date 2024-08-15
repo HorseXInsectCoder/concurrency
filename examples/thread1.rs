@@ -23,7 +23,7 @@ fn main() -> Result<()> {
     // 创建 consumer
     // consumer 可以在主线程也可以是在子线程
     // producer 一直生产，不需要 join，但 consumer 需要
-    let consumer = thread::spawn(move || {
+    let consumer: thread::JoinHandle<i32> = thread::spawn(move || {
         for msg in rx {
             println!("consumer: {:?}", msg);
         }
