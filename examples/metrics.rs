@@ -9,7 +9,7 @@ const M: usize = 4;
 fn main() -> Result<()> {
     let metrics = Metrics::new();
 
-    println!("{:?}", metrics.snapshot());
+    println!("{}", metrics);
 
     // 如果只是简单粗暴地用 clone，那么就跟主线程分离了，没有共享到同一个 metrics
     // 解决方法：Mutex
